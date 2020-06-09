@@ -38,10 +38,13 @@ edit.forEach((btn) => {
           <textarea class="form-control memory-field" name="memory" id="memory" wrap="hard"
               rows="5">${memory}</textarea>
       </div>
-      <input type="submit" class="store update " value="Save">
+      <input type="submit" class="store update saver" value="Save">
   </form>
       
       `;
+    const saver = document.querySelector(".saver");
+    console.log(saver);
+    saver.addEventListener("click", () => location.reload(true));
   });
 });
 
@@ -75,3 +78,5 @@ delbtn.forEach((btn) => {
     refresher.addEventListener("click", () => location.reload(true));
   });
 });
+
+////******************Making the buttons to refresh  the page */
