@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory card</title>
+    <link rel="stylesheet" href="./bootstrap.min (1).css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h3>Kaweesa's memories</h3>
+        </div>
+        <section>
+            <div class="memory-container">
+                <div class="memory-card">
+                    <div class="memory">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, obcaecati. Nobis earum
+                            accusantium dolorem eveniet exercitationem adipisci impedit commodi vero similique
+                            necessitatibus quod optio placeat perspiciatis, voluptate vel? Amet, quo.
+                        </p>
+                    </div>
+                    <div class="details">
+                        <div class="memory-title">
+                            <h4>Title: Good journey</h4>
+                        </div>
+                        <div class="memory-date">
+                            <h4>Date: 2/20/2002</h4>
+                        </div>
+                        <div class="buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <div class="memory">
+
+                    </div>
+                    <div class="details">
+                        <div class="memory-title">
+                            <h4>Title: Best Moment</h4>
+                        </div>
+                        <div class="memory-date">
+                            <h4>Date: 2/20/2017</h4>
+                        </div>
+                        <div class="buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="memory-form">
+                <form class="form-group ml-4 mr-4" action="/" method="POST">
+                    <fieldset>
+                        <legend>Note Memory:</legend>
+
+
+                        <div class="form-group ">
+                            <label class="form-control-label" for="title">Title:</label>
+                            <input type="text" value="" name="title" class="form-control" id="title">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="memory">Memory:</label>
+                            <textarea class="form-control" name="memory" id="memory" wrap="hard" rows="5"></textarea>
+                        </div>
+                        <input type="submit" class="store" value="Store">
+                    </fieldset>
+                </form>
+                <div class="memories">
+                    <h4>Memories: 2</h4>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="title">
+        <h3>Kaweesa's memories</h3>
+    </div>
+
+    <section>
+        <div class="memory-container">
+            <% if(typeof memoriesStore != 'undefined') { %>
+            <% memoriesStore.forEach( (memory) => { %>
+
+            <% if(memory.length === 0) { %>
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h5>No memories saved </h5>
+            </div>
+            <% }%>
+
+            <% for (let i = 0; i < memory.length; i++) { %>
+            <% let pretty = memory[i].memory.replace(/\n\r|\n|\r/g,'\n') %>
+            <div class="memory-card">
+                <div class="memory">
+                    <p>
+                        <%= pretty %>
+                    </p>
+                </div>
+                <div class="details">
+                    <div class="memory-title">
+                        <h4>Title: <span> <%= memory[i].title %></span></h4>
+                    </div>
+                    <div class="memory-date">
+                        <h4>Date: <span> <%= memory[i].date %></span></h4>
+                    </div>
+                    <div class="buttons">
+                        <button class="edit" data-id="<%= memory[i].id %>">Edit</button>
+                        <button class="delete" data-id="<%= memory[i].id %>">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <% }%>
+
+            <% }) %>
+            <% } %>
+
+        </div>
+        <div class="memory-form">
+
+            <% if(typeof errors != 'undefined') { %>
+            <% errors.forEach( (err) => { %>
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <%= err.msg %>
+            </div>
+            <% }) %>
+
+            <% } %>
+            <div class="form-container">
+                <form class="form-group ml-4 mr-4" action="/" method="POST">
+                    <legend>Note Memory:</legend>
+
+                    <div class="form-group id-div id-selector">
+                        <label class="form-control-label" for="id">Id:</label>
+                        <input type="text" value="" name="id" class="form-control id-field" id="id" readonly>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="form-control-label" for="title">Title:</label>
+                        <input type="text" value="" name="title" class="form-control title-field" id="title">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="memory">Memory:</label>
+                        <textarea class="form-control memory-field" name="memory" id="memory" wrap="hard"
+                            rows="5"></textarea>
+                    </div>
+                    <input type="submit" class="store strbtn" value="Store">
+                </form>
+            </div>
+            <div class="memories">
+                <h4>Memories:
+
+                    <% if(typeof memoriesStore != 'undefined') { %>
+                    <% memoriesStore.forEach(memory => { %>
+                    <%= memory.length %>
+                    <% }) %> 
+                    <% } %></h4>
+            </div>
+        </div>
+    </section>
+
+</div>
